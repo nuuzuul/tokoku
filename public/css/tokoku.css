@@ -95,3 +95,19 @@
 .tombol-nonaktif:hover {
     background-color: #9ca3af;
 }
+
+nav {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #111827;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}

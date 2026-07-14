@@ -17,6 +17,7 @@ class ProdukData
             ['id' => 8, 'nama' => 'Tas Ransel Trek 25L','kategori' => 'Fashion',    'slug_kategori' => 'fashion',    'harga' => 310000,  'stok' => 9,  'unggulan' => false, 'deskripsi' => 'Ransel tahan air dengan slot laptop 15 inci.'],
         ];
     }
+
     public static function unggulan(): array
     {
         return array_values(
@@ -28,6 +29,7 @@ class ProdukData
             )
         );
     }
+
     public static function cari(int $id): ?array
     {
         $hasil = array_filter(
@@ -36,5 +38,26 @@ class ProdukData
         );
 
         return array_values($hasil)[0] ?? null;
+    }
+
+    public static function perKategori(string $slug): array
+    {
+        return array_values(
+            array_filter(
+                self::semua(),
+                fn ($produk) => $produk['slug_kategori'] === $slug
+            )
+        );
+    }
+
+    public static function daftarKategori(): array
+    {
+        $kategori = [];
+
+        foreach (self::semua() as $produk) {
+            $kategori[$produk['slug_kategori']] = $produk['kategori'];
+        }
+
+        return $kategori;
     }
 }

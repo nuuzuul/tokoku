@@ -8,20 +8,16 @@
     </a>
 
     <a href="{{ route('produk.index') }}">
-        Produk
+        Semua Produk
     </a>
 
-    <a href="{{ route('kategori.show', 'elektronik') }}">
-        Elektronik
-    </a>
+    @foreach ($daftarKategori as $slug => $namaKategori)
 
-    <a href="{{ route('kategori.show', 'fashion') }}">
-        Fashion
-    </a>
+        <a href="{{ route('kategori.show', $slug) }}">
+            {{ $namaKategori }}
+        </a>
 
-    <a href="{{ route('kategori.show', 'makanan') }}">
-        Makanan
-    </a>
+    @endforeach
 
     <a href="{{ route('tentang') }}">
         Tentang

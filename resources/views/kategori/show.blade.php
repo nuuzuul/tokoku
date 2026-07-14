@@ -4,16 +4,22 @@
 
 @section('konten')
 
-    <section>
-        <h1>Kategori Produk</h1>
+    <section class="produk-section">
+        <div class="container">
 
-        <p>
-            Slug kategori: {{ $slug }}
-        </p>
+            <h1>Kategori {{ $namaKategori }}</h1>
 
-        <a href="{{ route('produk.index') }}">
-            Kembali ke Produk
-        </a>
+            <div class="grid-produk">
+
+                @foreach ($produk as $p)
+
+                    <x-kartu-produk :produk="$p" />
+
+                @endforeach
+
+            </div>
+
+        </div>
     </section>
 
 @endsection
