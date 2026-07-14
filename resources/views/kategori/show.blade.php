@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('judul', 'Kategori - TokoKu')
+@section('judul', 'Kategori ' . $namaKategori . ' - TokoKu')
 
 @section('konten')
 
@@ -11,11 +11,29 @@
 
             <div class="grid-produk">
 
-                @foreach ($produk as $p)
+                @forelse ($produk as $p)
 
                     <x-kartu-produk :produk="$p" />
 
-                @endforeach
+                @empty
+
+                    <div class="kategori-kosong">
+                        <h2>Belum ada produk di kategori ini</h2>
+
+                        <p>
+                            Silakan lihat kategori lain atau kembali ke halaman
+                            semua produk.
+                        </p>
+
+                        <a
+                            href="{{ route('produk.index') }}"
+                            class="tombol-detail"
+                        >
+                            Lihat Semua Produk
+                        </a>
+                    </div>
+
+                @endforelse
 
             </div>
 

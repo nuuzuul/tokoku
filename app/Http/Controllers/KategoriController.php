@@ -9,13 +9,10 @@ class KategoriController extends Controller
     public function show(string $slug)
     {
         $produk = ProdukData::perKategori($slug);
+
         $daftarKategori = ProdukData::daftarKategori();
 
-        if (empty($produk)) {
-            abort(404);
-        }
-
-        $namaKategori = $daftarKategori[$slug];
+        $namaKategori = $daftarKategori[$slug] ?? ucfirst($slug);
 
         return view('kategori.show', compact(
             'produk',

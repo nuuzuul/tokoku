@@ -111,3 +111,22 @@ nav a {
 nav a:hover {
     color: #93c5fd;
 }
+
+.kategori-kosong {
+    grid-column: 1 / -1;
+    padding: 50px 25px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.kategori-kosong h2 {
+    margin-top: 0;
+    color: #374151;
+}
+
+.kategori-kosong p {
+    margin-bottom: 25px;
+    color: #6b7280;
+}
