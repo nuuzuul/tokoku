@@ -7,9 +7,11 @@
     <section>
         <h1>Daftar Produk</h1>
 
-        <p>
-            Data produk akan ditampilkan pada tahap berikutnya.
-        </p>
+        <div class="grid-produk">
+            @foreach ($produk as $p)
+                <x-kartu-produk :produk="$p" />
+            @endforeach
+        </div>
     </section>
 
 @endsection

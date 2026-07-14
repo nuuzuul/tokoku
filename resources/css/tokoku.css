@@ -1,0 +1,35 @@
+.grid-produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.kartu-produk {
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.kartu-produk h3 {
+    margin-top: 0;
+}
+
+.stok-tersedia {
+    color: green;
+    font-weight: bold;
+}
+
+.stok-habis {
+    color: red;
+    font-weight: bold;
+}
+
+.tombol-detail {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+}
