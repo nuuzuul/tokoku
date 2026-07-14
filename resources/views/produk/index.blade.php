@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produk TokoKu</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <nav>
-        <a href="{{ route('beranda') }}">Beranda</a>
-        <a href="{{ route('produk.index') }}">Produk</a>
-        <a href="{{ route('tentang') }}">Tentang</a>
-    </nav>
+@section('judul', 'Produk - TokoKu')
 
-    <h1>Daftar Produk</h1>
+@section('konten')
 
-    <p>Data produk akan dibuat pada Level 2.</p>
+    <section>
+        <h1>Daftar Produk</h1>
 
-</body>
-</html>
+        <p>
+            Data produk akan ditampilkan pada tahap berikutnya.
+        </p>
+    </section>
+
+@endsection

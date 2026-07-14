@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategori Produk</title>
-</head>
-<body>
+@extends('layouts.app')
 
-    <h1>Kategori Produk</h1>
+@section('judul', 'Kategori - TokoKu')
 
-    <p>Slug kategori: {{ $slug }}</p>
+@section('konten')
 
-    <a href="{{ route('produk.index') }}">
-        Kembali ke Produk
-    </a>
+    <section>
+        <h1>Kategori Produk</h1>
 
-</body>
-</html>
+        <p>
+            Slug kategori: {{ $slug }}
+        </p>
+
+        <a href="{{ route('produk.index') }}">
+            Kembali ke Produk
+        </a>
+    </section>
+
+@endsection
