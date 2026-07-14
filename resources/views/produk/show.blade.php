@@ -13,7 +13,7 @@
                 <strong>Kategori:</strong>
                 {{ $produk['kategori'] }}
             </p>
-
+            {{-- tampil sebagai Rp 8.750.000 --}}
             <p>
                 <strong>Harga:</strong>
                 Rp {{ number_format($produk['harga'], 0, ',', '.') }}
