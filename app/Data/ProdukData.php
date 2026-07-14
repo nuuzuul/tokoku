@@ -17,4 +17,15 @@ class ProdukData
             ['id' => 8, 'nama' => 'Tas Ransel Trek 25L','kategori' => 'Fashion',    'slug_kategori' => 'fashion',    'harga' => 310000,  'stok' => 9,  'unggulan' => false, 'deskripsi' => 'Ransel tahan air dengan slot laptop 15 inci.'],
         ];
     }
+    public static function unggulan(): array
+    {
+        return array_values(
+            array_filter(
+                self::semua(),
+                function ($produk) {
+                    return $produk['unggulan'] === true;
+                }
+            )
+        );
+    }
 }
