@@ -15,6 +15,12 @@ class ProdukController extends Controller
 
     public function show(int $id)
     {
-        return view('produk.show', compact('id'));
+        $produk = ProdukData::cari($id);
+
+        if ($produk === null) {
+            abort(404);
+        }
+
+        return view('produk.show', compact('produk'));
     }
 }

@@ -28,4 +28,13 @@ class ProdukData
             )
         );
     }
+    public static function cari(int $id): ?array
+    {
+        $hasil = array_filter(
+            self::semua(),
+            fn ($produk) => $produk['id'] === $id
+        );
+
+        return array_values($hasil)[0] ?? null;
+    }
 }

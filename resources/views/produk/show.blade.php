@@ -4,16 +4,41 @@
 
 @section('konten')
 
-    <section>
-        <h1>Detail Produk</h1>
+    <section class="detail-produk">
+        <div class="container">
 
-        <p>
-            ID produk: {{ $id }}
-        </p>
+            <h1>{{ $produk['nama'] }}</h1>
 
-        <a href="{{ route('produk.index') }}">
-            Kembali ke Produk
-        </a>
+            <p>
+                <strong>Kategori:</strong>
+                {{ $produk['kategori'] }}
+            </p>
+
+            <p>
+                <strong>Harga:</strong>
+                Rp {{ number_format($produk['harga'], 0, ',', '.') }}
+            </p>
+
+            <p>
+                <strong>Stok:</strong>
+
+                @if ($produk['stok'] > 0)
+                    {{ $produk['stok'] }} produk tersedia
+                @else
+                    Stok Habis
+                @endif
+            </p>
+
+            <p>
+                <strong>Deskripsi:</strong><br>
+                {{ $produk['deskripsi'] }}
+            </p>
+
+            <a href="{{ route('produk.index') }}">
+                Kembali ke Daftar Produk
+            </a>
+
+        </div>
     </section>
 
 @endsection
