@@ -130,3 +130,20 @@ nav a:hover {
     margin-bottom: 25px;
     color: #6b7280;
 }
+
+nav a {
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #374151;
+}
+
+nav a.aktif {
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+}
