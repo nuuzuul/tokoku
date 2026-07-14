@@ -60,4 +60,24 @@ class ProdukData
 
         return $kategori;
     }
+    
+    public static function produkTerkait(
+        string $slugKategori,
+        int $idProduk,
+        int $batas = 3
+    ): array {
+        $hasil = array_filter(
+            self::semua(),
+            function ($produk) use ($slugKategori, $idProduk) {
+                return $produk['slug_kategori'] === $slugKategori
+                    && $produk['id'] !== $idProduk;
+            }
+        );
+
+        return array_slice(
+            array_values($hasil),
+            0,
+            $batas
+        );
+    }
 }

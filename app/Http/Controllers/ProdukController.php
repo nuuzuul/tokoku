@@ -21,6 +21,15 @@ class ProdukController extends Controller
             abort(404);
         }
 
-        return view('produk.show', compact('produk'));
+        $produkTerkait = ProdukData::produkTerkait(
+            $produk['slug_kategori'],
+            $produk['id'],
+            3
+        );
+
+        return view('produk.show', compact(
+            'produk',
+            'produkTerkait'
+        ));
     }
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('judul', 'Detail Produk - TokoKu')
+@section('judul', $produk['nama'] . ' - TokoKu')
 
 @section('konten')
 
@@ -11,7 +11,12 @@
 
             <p>
                 <strong>Kategori:</strong>
-                {{ $produk['kategori'] }}
+
+                <a
+                    href="{{ route('kategori.show', $produk['slug_kategori']) }}"
+                >
+                    {{ $produk['kategori'] }}
+                </a>
             </p>
             {{-- tampil sebagai Rp 8.750.000 --}}
             <p>
@@ -20,12 +25,16 @@
             </p>
 
             <p>
-                <strong>Stok:</strong>
+                <strong>Status stok:</strong>
 
                 @if ($produk['stok'] > 0)
-                    {{ $produk['stok'] }} produk tersedia
+                    <span class="stok-tersedia">
+                        Tersedia ({{ $produk['stok'] }})
+                    </span>
                 @else
-                    Stok Habis
+                    <span class="stok-habis">
+                        Stok Habis
+                    </span>
                 @endif
             </p>
 
@@ -37,6 +46,32 @@
             <a href="{{ route('produk.index') }}">
                 Kembali ke Daftar Produk
             </a>
+
+        </div>
+    </section>
+
+    <section class="produk-terkait">
+        <div class="container">
+
+            <h2>Produk Terkait</h2>
+
+            <div class="grid-produk">
+
+                @forelse ($produkTerkait as $p)
+
+                    <x-kartu-produk :produk="$p" />
+
+                @empty
+
+                    <div class="produk-terkait-kosong">
+                        <p>
+                            Belum ada produk terkait dari kategori ini.
+                        </p>
+                    </div>
+
+                @endforelse
+
+            </div>
 
         </div>
     </section>
