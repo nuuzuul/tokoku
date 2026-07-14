@@ -33,3 +33,31 @@
     color: white;
     text-decoration: none;
 }
+
+.produk-section {
+    padding: 50px 0;
+}
+
+.produk-section h1 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.grid-produk {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.kartu-produk {
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .grid-produk {
+        grid-template-columns: 1fr;
+    }
+}

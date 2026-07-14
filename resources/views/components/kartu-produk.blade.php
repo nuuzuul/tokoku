@@ -1,4 +1,5 @@
 <article class="kartu-produk">
+
     <h3>{{ $produk['nama'] }}</h3>
 
     <p>
@@ -31,4 +32,5 @@
     >
         Lihat Detail
     </a>
+
 </article>

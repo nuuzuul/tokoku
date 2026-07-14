@@ -4,13 +4,21 @@
 
 @section('konten')
 
-    <section>
-        <h1>Daftar Produk</h1>
+    <section class="produk-section">
+        <div class="container">
 
-        <div class="grid-produk">
-            @foreach ($produk as $p)
-                <x-kartu-produk :produk="$p" />
-            @endforeach
+            <h1>Semua Produk</h1>
+
+            <div class="grid-produk">
+
+                @foreach ($produk as $p)
+
+                    <x-kartu-produk :produk="$p" />
+
+                @endforeach
+
+            </div>
+
         </div>
     </section>
 
