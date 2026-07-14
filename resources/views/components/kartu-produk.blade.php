@@ -26,11 +26,17 @@
         @endif
     </p>
 
-    <a
-        href="{{ route('produk.show', $produk['id']) }}"
-        class="tombol-detail"
-    >
-        Lihat Detail
-    </a>
+    @if ($produk['stok'] > 0)
+        <a
+            href="{{ route('produk.show', $produk['id']) }}"
+            class="tombol-detail"
+        >
+            Lihat Detail
+        </a>
+    @else
+        <span class="tombol-detail tombol-nonaktif">
+            Lihat Detail
+        </span>
+    @endif
 
 </article>

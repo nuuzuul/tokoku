@@ -61,3 +61,37 @@
         grid-template-columns: 1fr;
     }
 }
+
+.stok-tersedia {
+    color: green;
+    font-weight: bold;
+}
+
+.stok-habis {
+    color: red;
+    font-weight: bold;
+}
+
+.tombol-detail {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+}
+
+.tombol-detail:hover {
+    background-color: #1d4ed8;
+}
+
+.tombol-nonaktif {
+    background-color: #9ca3af;
+    color: #e5e7eb;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.tombol-nonaktif:hover {
+    background-color: #9ca3af;
+}
